@@ -1,0 +1,22 @@
+<h3>Reviews for {{selectedProduct.title}}</h3>
+<h3></h3>
+<h3>{{selectedProduct.ratings.name}}</h3>
+<a class="btn btn-primary" [routerLink]="['/products', 'new_rating', selectedProduct._id]">New Review</a>
+<div class="container">
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Customer</th>
+            <th scope="col">Stars</th>
+            <th scope="col">Description</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr *ngFor="let review of selectedProduct.ratings">
+            <td>{{review.name}}</td>
+            <td>{{review.rating}}</td>
+            <td>{{review.comment}}</td>    
+        </tr>
+        </tbody>
+    </table>
+    </div>

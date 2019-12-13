@@ -1,0 +1,10 @@
+<h3>Edit a Restaurant</h3>
+<div class="container">
+  <form (submit)="editSubmit()">
+    <h3>Title: <input class="fields" type="text" name="title" [(ngModel)]="editProduct.title"></h3>
+    <p *ngIf="editProduct.title.length < 3">Title must be at least 3 characters long!</p>
+    <h3>Cuisine: <input class="fields" type="text" name="image" [(ngModel)]="editProduct.image"></h3>
+    <button class="btn btn-danger" [routerLink]="['/']">Cancel</button>
+    <button class="btn btn-success" type="submit">Edit</button>
+  </form>
+</div>

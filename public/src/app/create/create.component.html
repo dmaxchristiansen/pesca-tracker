@@ -1,0 +1,16 @@
+<h3>Register a Restaurant</h3>
+<div class="container">
+  <form (submit)="addProduct()">
+    <div class="form-group">
+      <label for="title">Restaurant Name:</label>
+      <input class="form-control" type="text" name="title" [(ngModel)]="newProduct.title">
+      <p *ngIf="newProduct.title.length < 3"> ~Title must be at least 3 characters long~ </p>
+    </div>
+    <div class="form-group">
+      <label for="image">Cuisine: </label>
+      <input class="form-control" type="text" name="image" [(ngModel)]="newProduct.image">
+    </div>
+    <button class="btn btn-success" type="submit">Register</button>
+    <button class="btn btn-danger" [routerLink]="['/']">Cancel</button>
+  </form>
+</div>
