@@ -25,12 +25,4 @@ export class ListComponent implements OnInit {
     })
   }
 
-  deleteProduct(id:string){
-    console.log("~Component: deleteProduct() initialzed~")
-    let observable = this._httpService.deleteProduct(id);
-    observable.subscribe(data=>{
-      console.log("~Component: deleteAuthor() response~,", data)
-      this.loadPage();
-    })
-  }
 }

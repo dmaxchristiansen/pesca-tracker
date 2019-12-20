@@ -18,13 +18,10 @@ export class NewratingComponent implements OnInit {
   }
 
   findProduct(){
-    console.log("~Component: findProduct() initialzed~")
     this._route.params.subscribe((params)=>{
-    console.log("~ID:", params["id"])
       let tempObs = this._httpService.getOneProduct(params["id"]);
       tempObs.subscribe((data:any)=>{
         this.selectedProduct = data;
-        console.log("~Component: selectedProduct response~", this.selectedProduct)
       })
     })
   }
@@ -34,9 +31,9 @@ export class NewratingComponent implements OnInit {
     let observable = this._httpService.addNewRating(this.newRating, Id);
     observable.subscribe(data => {
       console.log("~Create Comment~");
+      this.newRating = { rating: "", comment: "", name: "" }
+      this._router.navigate([`/fishers/reviews/${Id}`]);
     })
-    this.newRating = { rating: "", comment: "", name: "" }
-    this._router.navigate([`/products/reviews/${Id}`]);
   }
 
 }

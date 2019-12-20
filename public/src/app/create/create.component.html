@@ -1,16 +1,44 @@
-<h3>Register a Restaurant</h3>
-<div class="container">
-  <form (submit)="addProduct()">
-    <div class="form-group">
-      <label for="title">Restaurant Name:</label>
-      <input class="form-control" type="text" name="title" [(ngModel)]="newProduct.title">
-      <p *ngIf="newProduct.title.length < 3"> ~Title must be at least 3 characters long~ </p>
+<div class="faze">
+  <div class="container">
+    <h1 class="mt-2 mb-3">Add a New Fish to Your Log!</h1>
+    <div class="row">
+      <div class="col-8">
+        <form (submit)="addProduct()">
+          <div class="form-row">
+            <div class="form-group col-3">
+              <label for="catchDate">Catch Date:</label>
+              <input class="form-control" type="date" name="catchDate" [(ngModel)]="newProduct.catchDate">
+            </div>
+            <div class="form-group col-2">
+              <label for="state">State:</label>
+              <input class="form-control" type="text" name="state" [(ngModel)]="newProduct.state">
+            </div>
+            <div class="form-group col-2">
+              <label for="length">Length (in):</label>
+              <input class="form-control" type="text" name="length" [(ngModel)]="newProduct.length">
+            </div>
+            <div class="form-group col-5">
+              <label for="species">Fish Species:</label>
+              <input class="form-control" type="text" name="species" [(ngModel)]="newProduct.species">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="bodyOfWater">Body of Water:</label>
+              <input class="form-control" type="text" name="bodyOfWater" [(ngModel)]="newProduct.bodyOfWater">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="image">Image URL: </label>
+            <input class="form-control" type="text" name="image" [(ngModel)]="newProduct.image">
+          </div>
+          <button class="dece btn btn-success mr-2" type="submit">Register</button>
+          <button class="dece btn btn-danger" [routerLink]="['/fishers']">Cancel</button>
+        </form>
+      </div>
+      <div class="col-4">
+        <img src="favicon.ico" alt="" width="400">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="image">Cuisine: </label>
-      <input class="form-control" type="text" name="image" [(ngModel)]="newProduct.image">
-    </div>
-    <button class="btn btn-success" type="submit">Register</button>
-    <button class="btn btn-danger" [routerLink]="['/']">Cancel</button>
-  </form>
+  </div>
 </div>

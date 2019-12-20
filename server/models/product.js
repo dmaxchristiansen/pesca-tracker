@@ -11,8 +11,12 @@ const RatingSchema = new mongoose.Schema(
 
 const ProductSchema = new mongoose.Schema(
     {
-        title: {type: String, required: [true, "Product title is required!"], minlength: [3, "Title must be a minimum of 3 characters!"]},
+        species: {type: String},
         image: {type: String},
+        state: {type: String},
+        bodyOfWater: {type: String},
+        length: {type: String},
+        catchDate: {type: Date},
         ratings: [RatingSchema]
     }, 
     { timestamps: true }

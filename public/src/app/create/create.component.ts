@@ -18,14 +18,11 @@ export class CreateComponent implements OnInit {
   }
 
   addProduct(){
-    console.log("~Component: addProduct() initialzed~")
     var tempObs = this._httpService.postProduct(this.newProduct);
     tempObs.subscribe((data:any)=>{
-      console.log("~Component: addProduct() response~", data);
       // this.error = data.error.errors.title.message;     
       if(!data.error){
-        console.log("~Component: addProduct() successful~")
-        this._router.navigate(["/products"]);
+        this._router.navigate(["/fishers"]);
       }
     })
   }

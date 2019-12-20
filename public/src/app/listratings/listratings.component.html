@@ -1,22 +1,29 @@
-<h3>Reviews for {{selectedProduct.title}}</h3>
-<h3></h3>
-<h3>{{selectedProduct.ratings.name}}</h3>
-<a class="btn btn-primary" [routerLink]="['/products', 'new_rating', selectedProduct._id]">New Review</a>
-<div class="container">
-    <table class="table">
-        <thead class="thead-light">
-        <tr>
-            <th scope="col">Customer</th>
-            <th scope="col">Stars</th>
-            <th scope="col">Description</th>
-        </tr>
-        </thead>
-        <tbody >
-        <tr *ngFor="let review of selectedProduct.ratings">
-            <td>{{review.name}}</td>
-            <td>{{review.rating}}</td>
-            <td>{{review.comment}}</td>    
-        </tr>
-        </tbody>
-    </table>
+<div class="faze">
+    <div class="container-fluid ml-5">
+        <div class="row">
+            <div class="col-7">
+                <h3 class="display-4 mt-2 mb-4">What are people saying about your {{selectedProduct.species}}?</h3>
+                <table class="dece table table-hover table-dark rounded">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Reviewer</th>
+                            <th scope="col">Star Rating</th>
+                            <th scope="col">Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let review of selectedProduct.ratings">
+                            <td>{{review.name}}</td>
+                            <td>{{review.rating}}</td>
+                            <td>{{review.comment}}</td>    
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-5">
+                <img src="{{selectedProduct.image}}" class="rounded mt-5 ml-5 dece" width="200">
+            </div>
+        </div>
+        <a class="dece btn btn-secondary btn-lg mt-4" [routerLink]="['/fishers', 'new_rating', selectedProduct._id]">Enter a New Rating & Comment</a>
     </div>
+</div>

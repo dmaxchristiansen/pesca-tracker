@@ -11,12 +11,12 @@ export class HttpService {
 
   getAllProducts(){
     console.log("~Service: getAllProducts() initialized~");
-    return this._http.get("/api/products");
+    return this._http.get("/api/fishers");
   }
 
   getOneProduct(id:string){
     console.log("~Service: getOneProduct() initialized~", id);
-    return this._http.get("/api/products/"+id);
+    return this._http.get("/api/fishers/"+id);
   }
 
   postProduct(productObj){

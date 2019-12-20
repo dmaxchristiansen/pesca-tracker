@@ -17,13 +17,10 @@ export class ListratingsComponent implements OnInit {
   }
 
   findProduct(){
-    console.log("~Component: findProduct() initialzed~")
     this._route.params.subscribe((params)=>{
-    console.log("~ID:", params["id"])
       let tempObs = this._httpService.getOneProduct(params["id"]);
       tempObs.subscribe((data:any)=>{
         this.selectedProduct = data;
-        console.log("~Component: selectedProduct response~", this.selectedProduct)
       })
     })
   }

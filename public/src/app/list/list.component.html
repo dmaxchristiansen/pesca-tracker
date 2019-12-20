@@ -1,23 +1,17 @@
-<a class="btn btn-primary" [routerLink]="['/products', 'new']">New Restaurant</a>
-<div class="container">
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">Restaurant</th>
-        <th scope="col">Cuisine</th>
-        <th scope="col">Actions Available</th>
-      </tr>
-    </thead>
-    <tbody >
-      <tr *ngFor="let product of products">
-        <td>{{product.title}}</td>
-        <td>{{product.image}}</td>
-        <td>
-          <button class="btn btn-primary" [routerLink]="['/products', 'reviews', product._id]">Read Reviews</button>
-          <button class="btn btn-warning" [routerLink]="['/products', 'edit', product._id]">Edit</button>
-          <button class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</button>      
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="faze container-fluid">
+<div class="text-center">
+  <a class="fazorito btn btn-warning btn-lg mt-5" [routerLink]="['/fishers', 'new']">Add A New Fish</a>
+</div>
+  <div id="box">
+    <div class="frame" *ngFor="let product of products">
+      <img src={{product.image}} alt="Image of {{product.title}}" class="rounded">
+      <h3>{{product.species}}</h3>
+      <h6>{{product.length}} in</h6>
+      <p class="mb-0">Caught: {{product.catchDate | date}}</p>
+      <p>{{product.bodyOfWater}}, {{product.state}}</p>
+      <button class="text-dark dece btn btn-success mr-2 mb-2" [routerLink]="['/fishers', 'reviews', product._id]">Fish</button>
+      <button class="text-dark dece button btn btn-danger mb-2" [routerLink]="['/fishers', 'edit', product._id]">Edit</button>
+
+    </div>
+  </div>
 </div>

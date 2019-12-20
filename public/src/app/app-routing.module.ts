@@ -9,12 +9,12 @@ import { NewratingComponent } from './newrating/newrating.component';
 
 
 const routes: Routes = [
-  {path: "products", component: ListComponent},
-  {path: "products/new", component: CreateComponent},
-  {path: "products/edit/:id", component: EditComponent},
-  {path: "products/reviews/:id", component: ListratingsComponent},
-  {path: "products/new_rating/:id", component: NewratingComponent},
-  {path: "", pathMatch:"full", redirectTo: '/products'},
+  {path: "", component: HomeComponent},
+  {path: "fishers", component: ListComponent},
+  {path: "fishers/new", component: CreateComponent},
+  {path: "fishers/edit/:id", component: EditComponent},
+  {path: "fishers/reviews/:id", component: ListratingsComponent},
+  {path: "fishers/new_rating/:id", component: NewratingComponent},
 ];
 
 @NgModule({
